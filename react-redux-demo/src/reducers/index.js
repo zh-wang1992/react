@@ -1,5 +1,5 @@
 const initState = {
-    color: 'red'
+    color: 'black'
 }
 
 export default function (state = initState, action) {
