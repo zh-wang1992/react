@@ -10,8 +10,16 @@ const mapStateToProps = (state) => ({
 
 
 class Index extends Component {
+    componentDidMount(){
+        console.log(1111111,this.props)
+    }
     toPage = () => {
-        this.props.history.push('/list')
+        const path={
+            pathname:"/list",
+            state:"test-state", //参数会存储在内存中。可以在新页面中window.history.state.state中查看。router会从中取出放到this.props.loctionz中
+            search:"a=123"    //新页面的url中会拼接“?a=123”
+        }
+        this.props.history.push(path)
     }
     render() {
         return <div  >
