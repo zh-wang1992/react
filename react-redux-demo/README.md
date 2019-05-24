@@ -1,3 +1,35 @@
+
+
+# router4中的路由跳转控制
+
+在router3中，在任何页面都可以利用以下方式做跳转
+```
+import browserHistory from 'react-touter'
+...
+browserHistory.push(url)
+...
+```
+然而在router4中，不提供`browserHistory`等的导出。所以以上方法会报错。
+
+怎么解决呢？
+
+1. 匹配`Route`的一级组件中可以用`this.props.history.push()`做跳转。但是在`Route`的孙子组件中不能这么使用。但是我们可以把`history`当做组件的属性一级一级的传递下去。实现跳转；
+2. 官方推荐做法：使用`withRouter`;会将 `match`，`location`，`history`注入到当前组件。如下：
+```
+import {withRouter} from 'react-router'
+
+class List extends Component{
+    .....
+    this.props.history.push(url)
+
+}
+
+export default withRouter(List)
+//如果是`redux`项目。则
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(List))
+```
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
