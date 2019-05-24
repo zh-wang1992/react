@@ -16,8 +16,9 @@
 
 可以利用redux提供的一个函数  combineReducers
 */
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 import colorPage from './colorPage'
+import listPage from './listPage'
 
 
 /*  这里以colorPage为例
@@ -25,8 +26,9 @@ import colorPage from './colorPage'
  同时在该页面上操作的state会映射在state.colorPage上
  在containers/Index/index.js中获取color值得方式也要做相应的改变（ color: state.color->color: state.colorPage.color）
  */
-const reducer=combineReducers({
-    colorPage     
+const reducer = combineReducers({
+    colorPage,
+    listPage
 })
 
 export default reducer

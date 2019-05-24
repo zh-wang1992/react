@@ -1,6 +1,6 @@
 import React,{PureComponent} from 'react'
 import {connect} from 'react-redux'
-import  {changeColor} from '../../actions'
+import  {changeColor} from '../../actions/colorPage'
 const mapDispatchToProps=(dispatch)=>({
     handleClick:(data)=>dispatch(changeColor(data))
 })
