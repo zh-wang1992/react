@@ -5,7 +5,8 @@ import BlueColor from '../component/BlueColor'
 import ToOtherPage from '../component/ToOtherPage'
 const mapStateToProps = (state) => ({
     // color: state.color
-    color: state.colorPage.color
+    // color: state.colorPage.color
+    colorPage:state.get('colorPage')
 })
 
 class Index extends Component {
@@ -18,8 +19,13 @@ class Index extends Component {
         this.props.history.push(path)  
     }
     render() {
+
+        // console.log("color",this.props.color.toJS())
+        let colorPage=this.props.colorPage.toJS()
         return <div  >
-            <div style={{ color: this.props.color }}>这里是内容，颜色会随着点击按钮改变.只涉及一些简单操作。不涉及接口等异步操作</div>
+            {/* <div style={{ color: this.props.color }}>这里是内容，颜色会随着点击按钮改变.只涉及一些简单操作。不涉及接口等异步操作</div> */}
+            <div style={{ color:colorPage.color }}>这里是内容，颜色会随着点击按钮改变.只涉及一些简单操作。不涉及接口等异步操作</div>
+          
             <RedColor />
             <BlueColor />
             <ToOtherPage name="去列表页" url="/list"/>

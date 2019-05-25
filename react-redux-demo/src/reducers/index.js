@@ -16,7 +16,7 @@
 
 可以利用redux提供的一个函数  combineReducers
 */
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux-immutable'
 import colorPage from './colorPage'
 import listPage from './listPage'
 

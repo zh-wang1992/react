@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getList ,reverseList} from '../../actions/listPage'
 
 const mapStateToProps = (state) => ({
-    data: state.listPage.data
+    listPage: state.get('listPage')
 })
 
 /*注意这里getList()返回的是一个函数。而默认的dispatch接受一个对象形式的action。所以代码会报错
@@ -27,7 +27,7 @@ class List extends PureComponent {
     }
 
     render() { 
-        const { data } = this.props
+        let data  = this.props.listPage.toJS().data
         return <div>
             <button onClick={() => this.props.getList()}>获取列表</button>
             <button onClick={this.handleClick}>返回</button>
