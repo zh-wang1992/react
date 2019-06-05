@@ -6,7 +6,7 @@ import List from '../containers/ListPage'
 export default (
     <BrowserRouter>
         <Switch>
-            <Route exact path="/" component={Index} />
+            <Route exact path="/index" component={Index} />
             <Route path="/list" component={List} />
             {/* 没匹配到任何路由的时候显示NoMatch组件 */}
             {/* <Route component={NoMatch}/> */} 

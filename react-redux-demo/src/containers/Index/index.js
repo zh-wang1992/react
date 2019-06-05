@@ -14,9 +14,15 @@ class Index extends Component {
         const path = {
             pathname: "/list",
             state: "test-state", //参数会存储在内存中。可以在新页面中window.history.state.state中查看。router会从中取出放到this.props.loctionz中
-            search: "a=123"    //新页面的url中会拼接“?a=123”
+            search: "a=123"    //新页面的url中会拼接“?a=123”   如果pathname写成` "/list"?a=${123}`  跳转到新页面后。  页面不会加载资源
         }
         this.props.history.push(path)  
+    }
+    handleClick=()=>{
+        window.open('./list')
+    }
+    componentDidMount(){
+        console.log(111111111)
     }
     render() {
 
@@ -28,6 +34,7 @@ class Index extends Component {
           
             <RedColor />
             <BlueColor />
+            <button onClick={this.handleClick}>go </button>
             <ToOtherPage name="去列表页" url="/list"/>
             {/* <button onClick={this.toPage}>去列表页</button> */}
         </div>

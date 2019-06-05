@@ -19,10 +19,10 @@ class List extends PureComponent {
 
     handleClick = () => {
         this.props.history.push({
-            pathname: "/",
-            state: {
-                "test": "1111111111"
-            }
+            pathname: "/index",
+            // state: {
+            //     "test": "1111111111"
+            // }
         })
     }
 
