@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import RedColor from '../component/RedColor'
 import BlueColor from '../component/BlueColor'
 import ToOtherPage from '../component/ToOtherPage'
+import PrimitiveTest from '../primativeTest/index'
 const mapStateToProps = (state) => ({
     // color: state.color
     // color: state.colorPage.color
@@ -18,14 +19,15 @@ class Index extends Component {
         }
         this.props.history.push(path)  
     }
-    handleClick=()=>{
-        window.open('./list')
+    handleClick(){
+        console.log("this",this)
+        // window.open('./list')
     }
     componentDidMount(){
         console.log(111111111)
     }
     render() {
-
+          console.log('---------render---index---page------')
         // console.log("color",this.props.color.toJS())
         let colorPage=this.props.colorPage.toJS()
         return <div  >
@@ -37,6 +39,11 @@ class Index extends Component {
             <button onClick={this.handleClick}>go </button>
             <ToOtherPage name="去列表页" url="/list"/>
             <button onClick={this.toPage}>去列表页(测试pathname中加参数)</button>
+            <button onClick={function(){console.log(this)}}>测试this</button>
+
+
+
+            <PrimitiveTest  data={colorPage.color}/>
         </div>
     }
 }

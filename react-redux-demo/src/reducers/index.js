@@ -19,6 +19,7 @@
 import { combineReducers } from 'redux-immutable'
 import colorPage from './colorPage'
 import listPage from './listPage'
+import primitiveJS from './primativeJS'
 
 
 /*  这里以colorPage为例
@@ -28,7 +29,8 @@ import listPage from './listPage'
  */
 const reducer = combineReducers({
     colorPage,
-    listPage
+    listPage,
+    primitiveJS
 })
 
 export default reducer
