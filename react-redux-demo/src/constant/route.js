@@ -4,7 +4,7 @@ import Index from '../containers/Index'
 import List from '../containers/ListPage'
 
 export default (
-    <BrowserRouter>
+    <BrowserRouter>    {/**webpack-dev-server 做了配置，所以本地开发使用hashrouter 和 browserrouter都可以 */}
         <Switch>
             <Route exact path="/" component={Index} />
             <Route path="/list" component={List} />
